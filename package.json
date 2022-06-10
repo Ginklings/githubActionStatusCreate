@@ -1,0 +1,32 @@
+{
+  "name": "create-status-for-github-action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm ci && esbuild ./src/main.js --bundle --platform=node --outfile=dist/index.js && npm run format && git add dist/*",
+    "bundle": "esbuild ./src/main.js --bundle --platform=node --outfile=dist/index.js",
+    "format": "prettier --write **/*.js",
+    "format-check": "prettier --check **/*.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build"
+    }
+  },
+  "keywords": [],
+  "author": "André Ginklings",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.2.7",
+    "@actions/github": "^5.0.0",
+    "glob": "^7.1.7",
+    "fast-glob": "^3.2.11"
+  },
+  "devDependencies": {
+    "esbuild": "^0.12.8",
+    "husky": "^4.3.8",
+    "install": "^0.13.0",
+    "prettier": "^2.3.0"
+  }
+}
