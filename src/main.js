@@ -31,7 +31,7 @@ async function run() {
     const markupData = getMarkupForJson(resultsJson, reportName);
 
     let conclusion = "success";
-    if (ignoreTestFailures) {
+    if (failedTests > 0) {
       core.warning(`At least one failure was found.`);
       conclusion = ignoreTestFailures ? "neutral" : "failure";
     } else {
