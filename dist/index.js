@@ -16879,7 +16879,7 @@ ${getTestmessages(jsonResults.stats, jsonResults.message)}
     </tr>
     <tr>
       <th>Message:</th>
-      <td><code>${message.message}</code></td>
+      <td><code>${message}</code></td>
     </tr>
   </table>
 </details>
